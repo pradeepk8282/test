@@ -1,0 +1,21 @@
+@CHARSET "ISO-8859-1";
+ul{
+	
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+	overflow: hidden;
+	background: #cfcfcf;
+	position: sticky;
+	}
+	ul li{
+	float: left;
+	}
+	
+	li a{
+	
+	display: block;
+	padding: 5px 20px;
+	text-decoration: none;
+
+	}

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="application/xml"?>
+<users-data>
+    <header-section>
+        <data-type id="019">User Bill Data</data-type>
+        <process-date>Saturday May 19 2018 2:04:29</process-date>
+    </header-section>
+    <user-bill-data>
+        <full-name>Pradeep</full-name>
+        <postal-code>585401</postal-code>
+        <national-id>123AD329248</national-id>
+        <price>17.84</price>
+    </user-bill-data>
+    <user-bill-data>
+        <full-name>Manju</full-name>
+        <postal-code>548203</postal-code>
+        <national-id>942KFDSCW322</national-id>
+        <price>34.50</price>
+    </user-bill-data>
+    <user-bill-data>
+        <full-name>Hari</full-name>
+        <postal-code>667042</postal-code>
+        <national-id>ABDD324KKD8</national-id>
+        <price>69.36</price>
+    </user-bill-data>
+</users-data>

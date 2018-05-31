@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<employee>
+	<empno>101</empno>
+	<ename>sanju</ename>
+	<sal>20.0</sal>
+</employee>

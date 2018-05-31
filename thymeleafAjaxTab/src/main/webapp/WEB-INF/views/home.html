@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Title</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+
+</head>
+<body>
+	<!-- <a href="?lang=hi">HINDI</a>
+<a href="?lang=en">English</a> -->
+
+	<div>
+		<select id="lang">
+			<option value="en">English</option>
+			<option value="hi">Hindi</option>
+			<option value="kn">Kannada</option>
+		</select>
+
+
+	</div>
+	<div id="temp">
+		<a href="?lang=hi">HINDI</a> <a href="?lang=en">English</a> <a
+			href="?lang=kn">Kannada</a>
+	</div>
+<p>The year is <span th:text="2013">1492</span>.</p>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-9 col-9">
+				<h1 th:text="#{welcome.msg}" class="lead">Welcome Message</h1>
+				<form action="createAccount" method="post" class="form-horizontal"
+					th:object="${accountHolder}">
+					<h3 th:text="#{Form.heading}"></h3>
+					<div
+						th:class="${#fields.hasErrors('firstName')} ? 'form-group has-error' :'form-group' ">
+						<label th:text="#{Label.firstName}" class="col-sm-2 control-label"></label>
+						<div class="col-sm-10">
+							<input type="text" th:field="*{firstName}" class="form-control" />
+							<p th:errors="*{firstName}" class="help-block"></p>
+						</div>
+
+					</div>
+					 <div th:class="${#fields.hasErrors('middleName')} ? 'form-group has-error' :'form-group' ">  
+						<label th:text="#{Label.middleName}"
+							class="col-sm-2 control-label"></label>
+						<div class="col-sm-10">
+							<input type="text" th:field="*{middleName}" class="form-control" />
+							 <p th:errors="*{middleName}" class="help-block"></p> 
+						</div>
+					</div> 
+					<div
+						th:class="${#fields.hasErrors('lastName')} ? 'form-group has-error' :'form-group' ">
+						<label th:text="#{Label.lastName}" class="col-sm-2 control-label"></label>
+						<div class="col-sm-10">
+							<input type="text" th:field="*{lastName}" class="form-control" />
+							<p th:errors="*{lastName}" class="help-block"></p>
+						</div>
+					</div>
+					<div
+						th:class="${#fields.hasErrors('age')} ? 'form-group has-error' :'form-group' ">
+						<label th:text="#{Label.age}" class="col-sm-2 control-label"></label>
+						<div class="col-sm-10">
+							<input type="text" th:field="*{age}" class="form-control" />
+							<p th:errors="*{age}" class="help-block"></p>
+						</div>
+					</div>
+					<div
+						th:class="${#fields.hasErrors('gender')} ? 'form-group has-error' :'form-group' ">
+						<label th:text="#{Label.gender}" class="col-sm-2 control-label"></label>
+						<div class="col-sm-10">
+							<label class="radio-inline"> <input type="radio"
+								th:field="*{gender}" value="M" />Male
+							</label> <label class="radio-inline"> <input type="radio"
+								th:field="*{gender}" value="F" />Female
+							</label>
+							<p th:errors="*{gender}" class="help-block"></p>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-10">
+							<button type="submit" th:inline="text" class="btn btn-primary">[[#{Label.save}]]</button>
+						</div>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.3.1.js"
+		integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+		crossorigin="anonymous"></script>
+
+	<script type="text/javascript">
+  $(document).ready(function(){
+	  $("#lang").change(function(){
+				var val=this.value;
+				alert(window.location+"============"+val);
+				$.ajax({
+							type:"GET",
+							url:window.location+"?lang="+val,
+							success:function(data){alert("success");
+							alert(data)},
+							error:function(){alert("failure"+console.log(val));}
+					});
+		  });
+	 
+
+		  
+
+	  
+	  });
+
+  
+
+	    
+</script>
+</body>
+</html>
