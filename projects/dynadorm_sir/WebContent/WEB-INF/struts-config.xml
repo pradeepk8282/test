@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "struts-config_1_2.dtd">
+<struts-config>
+
+	<form-beans>
+		<form-bean name="loginForm" type="org.apache.struts.action.DynaActionForm">
+			<form-property name="userName" type="java.lang.String" />
+	      	<form-property name="password" type="java.lang.String" />
+		</form-bean>
+	</form-beans>
+	
+	<action-mappings> 
+		<action path="/login" type="com.cluster.action.LoginAction" name="loginForm">
+			<forward name="success" path="/jsp/success.jsp" />
+			<forward name="failure" path="/jsp/failure.jsp" />
+		</action>
+	</action-mappings> 
+	 <message-resources parameter="myapp.ApplicationResources"/>
+
+</struts-config> 

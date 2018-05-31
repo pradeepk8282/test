@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	
+	<servlet>
+		<servlet-name>logout</servlet-name>
+		<servlet-class>com.cluster.LogoutServlet</servlet-class>
+	</servlet>
+	
+	
+	<session-config>
+	<session-timeout>
+	1
+	</session-timeout>
+	
+	</session-config>
+	
+	<servlet-mapping>
+		<servlet-name>logout</servlet-name>
+		<url-pattern>/hello</url-pattern>
+		
+		
+	</servlet-mapping>
+	<listener>
+		<listener-class>com.cluster.MyContextListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>com.cluster.MySessionListener</listener-class>
+	</listener>
+</web-app>
