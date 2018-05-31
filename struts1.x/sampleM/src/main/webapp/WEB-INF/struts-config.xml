@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "struts-config_1_2.dtd">
+<struts-config>
+	<!-- =====================Bean-creation==================================== -->
+	<form-beans>
+		<form-bean name="loginform" 
+				   type="com.neorays.form.Loginform" />
+	</form-beans>
+
+
+	<!--========================global forward=================================== -->
+<!-- 	<global-forwards>
+		<forward name="welcome" path="index.jsp" />
+	</global-forwards> -->
+
+	<!-- ====================================Action-mapping===================== -->
+	<action-mappings>
+		<action path="/login" 
+				type="com.neorays.action.LoginAction"
+				name="loginform" 	
+				scope="request">
+
+			<forward name="success" 
+					 path="/jsp/success.jsp" />
+					 
+			<forward name="failure" 
+					 path="/jsp/failure.jsp" />
+
+		</action>
+	</action-mappings>
+	<!-- ===============================Resource====================== -->
+	<message-resources parameter="com.neorays.loginform.Resource" />
+</struts-config> 

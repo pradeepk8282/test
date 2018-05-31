@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE form-validation PUBLIC
+     "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.3.0//EN"
+     "http://jakarta.apache.org/commons/dtds/validator_1_3_0.dtd">
+
+<form-validation>
+
+    <formset>
+        <form name="employeeform">
+            <field property="name" 
+				depends="required, minlength, maxlength">
+				<arg key="employeeform.nameError" />
+				<arg name="minlength" key="${var:minlength}"
+					resource="false" />
+				<arg name="maxlength" key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>4</var-value>
+				</var>
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>9</var-value>
+				</var>
+            </field>
+               <field property="id" 
+				depends="required,intRange">
+				<arg key="employeeform.idError" />
+				<arg name="intRange" key="${var:min}" resource="false"/>
+                <arg name="intRange" key="${var:max}" resource="false"/>
+                     <var>
+                          <var-name>min</var-name>
+                          <var-value>100</var-value>
+                      </var>             
+                     <var>
+                          <var-name>max</var-name>
+                          <var-value>200</var-value>
+                     </var>             
+                    
+            </field>
+        </form>
+    </formset>
+
+
+
+</form-validation>

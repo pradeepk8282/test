@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "struts-config_1_2.dtd">
+<struts-config>
+
+	<form-beans>
+		<form-bean name="studentForm" type="com.neorays.form.StudentForm" />
+	</form-beans>
+
+
+	<action-mappings>
+		<action path="/login" type="com.neorays.action.StudentAction"
+			name="studentForm">
+
+			<forward name="success" path="/jsp/success.jsp" />
+
+			<exception key="errors.search.phone.noresults" type="com.neorays.exception.PhoneNotFound"
+				path="/jsp/showPhoneNumber.jsp" />
+		</action>
+	</action-mappings>
+
+	<message-resources parameter="Resource" />
+
+</struts-config> 

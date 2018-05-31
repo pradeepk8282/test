@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "struts-config_1_2.dtd">
+<struts-config>
+
+	<form-beans>
+		<form-bean name="employeeform" type="com.cluster.form.EmployeeForm"/>
+	</form-beans>
+	
+	<action-mappings> 
+		<action path="/login" type="com.cluster.action.EmployeeAction" name="employeeform" 
+			 validate="true" input="/jsp/employee.jsp">
+			<forward name="success" path="/jsp/success.jsp" />
+			<forward name="error" path="/jsp/error.jsp" />
+		</action>
+	</action-mappings> 
+	 <message-resources parameter="myapp.ApplicationResources"/>
+	 
+	 <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+		<set-property property="pathnames"
+			value="/WEB-INF/validator-rules.xml, /WEB-INF/validator.xml" />
+	</plug-in>
+
+</struts-config> 
